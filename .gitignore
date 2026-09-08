@@ -1,0 +1,13 @@
+.DS_Store
+
+# Show audio — masters live on the NAS / in Apple Music, not in git.
+# GitHub hard-caps individual files at 100MB and these routinely exceed it.
+*.flac
+*.m4a
+cover.jpg
+*.jpg
+*.jpeg
+*.png
+
+# Local session/task bookkeeping, not project content.
+.claude/scheduled_tasks.lock

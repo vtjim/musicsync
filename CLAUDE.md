@@ -781,6 +781,23 @@ guessing them from the identifier.
 
 ## iCloud Music Library: what can and can't be automated
 
+**Confirmed 2026-09-17: Jim actually listens to this library on his
+iPhone via the same Apple ID — he doesn't play these shows on the Mac
+itself.** That makes the manual "Update Cloud Library" step (below) more
+important than it might look, not less — if a show never gets pushed to
+iCloud, it never reaches the phone at all. Remind him after every batch,
+and don't assume the Mac-local copy is the "real" one just because it's
+what this pipeline directly manages.
+
+He also wants Music's "Optimize Mac Storage" enabled (Music → Settings →
+Files tab) so the Mac doesn't hold local copies of everything once
+they're synced — same rationale as Photos below, this machine is being
+run as a dedicated automation utility box, not a listening device. That
+setting isn't exposed as a scriptable preference (checked — no relevant
+key under `defaults read com.apple.Music`), so it has to be toggled by
+hand; it doesn't change anything about how this pipeline itself works,
+just what Music decides to keep cached locally afterward.
+
 Newly imported tracks show `cloud status` of `unknown` and do **not**
 upload on their own — they appear on other devices by name but won't
 play. Forcing the upload is a **manual, at-the-Mac step**:

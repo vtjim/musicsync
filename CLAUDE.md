@@ -291,6 +291,32 @@ Redeploy that same URL after each new show is processed rather than
 creating a new one (`Artifact` with `url:` set, after reading it back).
 If the URL ever goes missing, find it with `Artifact` → `list`.
 
+**A separate "Setlist Ledger" artifact is the public-facing version** —
+a clean, searchable/filterable list (search box + collection chips) of
+every show with its archive.org link, meant to be shared outside this
+project the same way Jim shares his recipes site, **not** the private
+`musicsync` GitHub repo (that stays private — see "Backups" below):
+
+**https://claude.ai/code/artifact/d03ea4cb-2313-40b5-9b99-367dd25f6b69**
+
+It's a static page with the show list embedded as a JS array (`SHOWS`)
+near the bottom of the file — update that array (redeploy the same URL)
+whenever new shows are added, rather than rebuilding the whole page.
+Keep the format consistent: `{c: collection name, a: artist, d: YYYY-MM-DD,
+v: venue (blank if redundant with the collection name), t: track count,
+id: archive.org identifier (blank string if none confirmed)}`. Artifacts
+are private by default — Jim shares it publicly himself via the page's
+own share menu when he's ready to; don't assume it's public just because
+it exists.
+
+## Backups
+
+The `musicsync` GitHub repo (`https://github.com/vtjim/musicsync`,
+private) is a working backup of this CLAUDE.md and the skills — commit
+and push periodically, especially after a big batch of changes. **Keep
+it private** — Jim explicitly wants all the raw project logic/notes
+private, only the Setlist Ledger artifact above is meant to be public.
+
 ## What's in the library
 
 Each show lives in its own folder here, with the original FLACs and the

@@ -105,11 +105,11 @@ replaced by underscores, e.g. `lcwass2026-06-05_VERMONT_TAPERS_COLLECTIVE`.
    lookup in Music (fast) rather than a full-library scan (slow, see
    gotcha below).
 
-6. **Manual step Jim still has to do himself**: Music → File → Library →
-   Update Cloud Library, to push into iCloud Music Library. Terminal has
-   no accessibility permission to drive Music's menu bar
-   (`osascript ... System Events` fails with `-1719`), so don't try to
-   automate this — just remind him.
+6. **Push to iCloud Music Library**: run the "Update Cloud Library" menu
+   trigger — see the exact AppleScript in the "iCloud Music Library"
+   section below. This was manual-only until 2026-09-17 (Terminal lacked
+   Accessibility permission); it's since been granted, so do this
+   automatically at the end of every batch now instead of reminding Jim.
 
 ## Working from an archive.org URL directly
 
@@ -834,23 +834,38 @@ key under `defaults read com.apple.Music`), so it has to be toggled by
 hand; it doesn't change anything about how this pipeline itself works,
 just what Music decides to keep cached locally afterward.
 
-Newly imported tracks show `cloud status` of `unknown` and do **not**
-upload on their own — they appear on other devices by name but won't
-play. Forcing the upload is a **manual, at-the-Mac step**:
-Music → File → Library → Update Cloud Library.
+**UPDATE 2026-09-17: this is now automatable.** Jim granted Terminal
+Accessibility permission (System Settings → Privacy & Security →
+Accessibility → Terminal), which fixes the `-1719` error below. The
+correct AppleScript path (note "Library" is a *submenu item* whose own
+submenu holds the real command — not a menu you can address directly):
 
-This cannot be triggered remotely, and it's worth not re-litigating:
+```applescript
+tell application "Music" to activate
+delay 1
+tell application "System Events"
+  tell process "Music"
+    click menu item "Update Cloud Library" of menu 1 of menu item "Library" of menu 1 of menu bar item "File" of menu bar 1
+  end tell
+end tell
+```
+
+Run this after every import batch from now on instead of just reminding
+Jim — `cloud status` on newly-added tracks won't flip from `unknown`
+immediately (the upload itself still takes time), so don't expect the
+count to change right away; the click succeeding without a `-1719`/`-1728`
+error is what confirms it actually fired.
+
+Older context, kept for the record now that it's solved:
 
 - Music's AppleScript dictionary exposes `cloud status` as **read-only**
   and has no "update cloud library" command (checked the sdef directly —
   note `sdef` itself needs Xcode, so read
-  `/System/Applications/Music.app/Contents/Resources/com.apple.Music.sdef`).
-- Driving the menu via System Events fails with `-1719` (osascript has no
-  Accessibility permission). Granting Terminal Accessibility permission
-  once, in System Settings → Privacy & Security → Accessibility, would
-  make this automatable in future — Jim has been told, it's his call.
+  `/System/Applications/Music.app/Contents/Resources/com.apple.Music.sdef`)
+  — this is still true, which is why the System Events menu-click above
+  is the only way in, not a direct Music command.
 - Screen Sharing and Remote Login are both off, so there's no remote-GUI
-  fallback either.
+  fallback either (moot now, but noted).
 - Quitting and relaunching Music does **not** kick off the upload
   (tried it; status stayed `unknown` across 20+ checks over 10 hours).
 

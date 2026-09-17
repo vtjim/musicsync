@@ -291,31 +291,45 @@ Redeploy that same URL after each new show is processed rather than
 creating a new one (`Artifact` with `url:` set, after reading it back).
 If the URL ever goes missing, find it with `Artifact` → `list`.
 
-**A separate "Setlist Ledger" artifact is the public-facing version** —
-a clean, searchable/filterable list (search box + collection chips) of
-every show with its archive.org link, meant to be shared outside this
-project the same way Jim shares his recipes site, **not** the private
-`musicsync` GitHub repo (that stays private — see "Backups" below):
+**The "Setlist Ledger" is also mirrored as its own public GitHub Pages
+site** — a second, separate public repo (`vtjim/setlist-ledger`, not this
+one), matching the pattern of Jim's other public single-page sites
+(`recipes`, `songbook`, `road-trip-shuffle`): plain `index.html` at repo
+root, GitHub Pages serving from `main`/`/`.
 
-**https://claude.ai/code/artifact/d03ea4cb-2313-40b5-9b99-367dd25f6b69**
+- Artifact (same content, update via `Artifact` redeploy):
+  **https://claude.ai/code/artifact/d03ea4cb-2313-40b5-9b99-367dd25f6b69**
+- Public site: **https://vtjim.github.io/setlist-ledger/** — after
+  redeploying the artifact, copy the same source into that repo's
+  `index.html` (it needs the full `<!doctype html><html><head>...`
+  wrapper the artifact's own render skips) and `git push`.
 
-It's a static page with the show list embedded as a JS array (`SHOWS`)
-near the bottom of the file — update that array (redeploy the same URL)
-whenever new shows are added, rather than rebuilding the whole page.
-Keep the format consistent: `{c: collection name, a: artist, d: YYYY-MM-DD,
-v: venue (blank if redundant with the collection name), t: track count,
-id: archive.org identifier (blank string if none confirmed)}`. Artifacts
-are private by default — Jim shares it publicly himself via the page's
-own share menu when he's ready to; don't assume it's public just because
-it exists.
+Show data lives as a JS array (`SHOWS`) near the bottom of the file in
+both places — keep them in sync. Format: `{c: collection name, a: artist,
+d: YYYY-MM-DD, v: venue (blank if redundant with the collection name),
+t: track count, id: archive.org identifier (blank string if none
+confirmed)}`.
 
 ## Backups
 
-The `musicsync` GitHub repo (`https://github.com/vtjim/musicsync`,
-private) is a working backup of this CLAUDE.md and the skills — commit
-and push periodically, especially after a big batch of changes. **Keep
-it private** — Jim explicitly wants all the raw project logic/notes
-private, only the Setlist Ledger artifact above is meant to be public.
+**As of 2026-09-17, the `musicsync` GitHub repo
+(`https://github.com/vtjim/musicsync`) is PUBLIC** — Jim's own call,
+after a scrub pass. Personal values (the NAS's local IP, and the email
+addresses used by the library-update-email skill) are placeholders in
+the tracked files (`<NAS_IP>`, `<JIM_EMAIL>`, `<MELISSA_EMAIL>`,
+`<ALAN_EMAIL>`) resolved from `.claude/local-values.md`, which is
+gitignored and must never be committed. **Before adding any new secret,
+email address, IP, or other personal detail to a tracked file, add it to
+`local-values.md` as a placeholder instead** — this repo is public now,
+so anything committed here is world-readable. Commit and push
+periodically, especially after a big batch of changes.
+
+A full working clone of both this repo and `setlist-ledger` (with
+`origin` pointed at GitHub, not a local path) lives on the "TAPEBACKUP"
+USB drive under `git-backups/` as a portable, turnkey copy — `git pull`
+there after pushing here to keep it current. `local-values.md` isn't
+tracked by git so it doesn't come along automatically on a pull; copy it
+over by hand if it changes.
 
 ## What's in the library
 

@@ -731,6 +731,42 @@ under a different album name ("Live at Higher Ground Showcase Lounge on
 without confirmation (needs the same kind of bulk-edit permission as the
 Pink Talking Fish cleanup above).
 
+**Dobbs' Dead — Mark Van Blunk / MVBAKGHD tapes, 2026-09-17** — found by
+searching all of Mark Van Blunk's 2025 uploads (uploader
+`markvanblunk@gmail.com` — his displayed `@mvbtapes` handle is NOT the
+same as the `uploader` field archive.org actually indexes; search by the
+real email or the search silently returns 0). No local folder for any of
+these — same discipline as above.
+
+| Date | Tracks | Source | Notes |
+|---|---|---|---|
+| 2025-03-26 | 14 | `dd2025-03-26.MVBAKGHD` | no embedded tags, titles from filenames |
+| 2025-05-28 | 15 | `dd2025-05-28.MVBAKGHD` | no embedded tags, titles from filenames |
+| 2025-06-25 | 16 | `dd2025-06-25.MVBAKGHD` | **embedded tags exist but are garbage** — every file's TITLE tag reads the literal string `230930_05` (an unrelated recorder auto-name/session ID) and ARTIST reads `My Recording` — the taper's recording software's own placeholder defaults, never replaced. XLD carries these through, so Music imports every track with the *identical* wrong title, making them unfindable by name. **Fix: match tracks to source files by exact duration** (`ffprobe -show_entries format=duration` per file vs `duration of t` in Music) rather than by name — durations are unique per track even when titles collide. |
+| 2025-08-05 | 14 | `dd2025-08-05.VERMONT_TAPERS_COLLECTIVE_FLAC` | filenames read `20250801`, 4 days off the real date — trusted item metadata over filenames |
+| 2025-09-24 | 15 | `dd2025-09-24.MVBAKGHD` | no embedded tags, titles from filenames |
+| 2025-10-22 | 16 | `dd2025-10-22.MVBAKGHD` | first import attempt landed as 32 tracks (16 correctly auto-matched to a misspelled "Dobbs's Dead" via Apple's own catalog, 16 blank) — deleted all 32 and re-added the local `.m4a` files fresh in a single clean pass rather than trying to repair either half |
+| 2025-10-29 | 27 | `dd2025-10-29.MVBAKGHD` | this one was **already partially in the library** (26/27 tracks, missing "Stella Blue") from some earlier untracked import — re-ran the full pipeline, which correctly created a second complete 27-track copy; kept only the new complete set and deleted the 26 old ones rather than trying to patch the single gap in place |
+| 2025-11-26 | 15 | `dd2025-11-26.MVBAKGHD` | same as 10-29 — already had a clean 15-track copy (`2025-11-26 Zenbarn`) plus a second messier 14-track duplicate (`Live at Zenbarn on 2025-11-26`, missing a track number); deleted the messy duplicate, kept the clean one, then downloaded fresh just to backfill the USB master (which had neither) |
+
+**General gotcha from this batch: always check `whose album contains
+<date>` against the archive.org file count before assuming a show is
+either "fully present" or "not present at all."** Both 10-29 and 11-26
+looked like ordinary gaps at a glance but were actually *silent partial
+duplicates* from earlier sessions — a single count check without
+comparing to the real track total would have missed both.
+
+**Bean Voyage** — a fragment find, not a full show: `radiobean20260906t16`
+only holds 8 of 20 tracks from a multi-act Radio Bean/Lamp Shop farewell
+night (Mad, Francie and Jon, Acqua Mossa, HISSSS); no other archive.org
+item exists for the missing tracks. The item's own `creator` field says
+"Bean Voyage" though the setlist text attributes these 8 tracks to two
+different acts (Acqua Mossa 13-16, HISSSS 17-20) — Jim chose to trust
+the `creator` field as-is rather than split it. Tagged generic "Track
+13"-"Track 20" (no real titles in the description for this range),
+album `Live at Radio Bean, Burlington VT - 2026-09-06 (Farewell
+Celebration)`, 8 tracks, no local folder.
+
 ## Daily 7am library-update email
 
 A recurring cron (set up 2026-09-17, session-only — CronCreate jobs

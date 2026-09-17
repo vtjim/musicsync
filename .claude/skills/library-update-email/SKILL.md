@@ -5,11 +5,11 @@ the musicsync live-recording library, emailed to him and Melissa.
 
 ## Recipients
 
-- `jim.silvia@gmail.com`
-- `mjlevy718@gmail.com` (Melissa — confirmed 2026-09-14: she's cc'd on his
-  recurring "Reels, Riffs & Ridgelines" digest and appears as "Melissa
-  Smith" in his Venmo history. Don't re-ask each time; only re-confirm if
-  a send ever bounces or Jim gives a different address.)
+Real addresses live in `.claude/local-values.md` (gitignored — this repo
+is public, so real email addresses never get committed here). Resolve
+`<JIM_EMAIL>`, `<MELISSA_EMAIL>`, and `<ALAN_EMAIL>` from that file
+before sending. Don't re-ask each time; only re-confirm if a send ever
+bounces or Jim gives a different address.
 
 ## What to include
 

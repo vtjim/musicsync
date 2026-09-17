@@ -5,9 +5,9 @@
 Local disk fills up fast with 24-bit taper FLACs, so completed shows get
 their masters moved off the Mac once imported and verified in Music:
 
-- Share: `musicarchive` on the Synology DiskStation at `192.168.67.121`,
+- Share: `musicarchive` on the Synology DiskStation at `<NAS_IP>`,
   mounted at `/Volumes/musicarchive` (mount survives most reboots; if it's
-  missing, reconnect via Finder ⌘K → `smb://192.168.67.121` and enter the
+  missing, reconnect via Finder ⌘K → `smb://<NAS_IP>` and enter the
   saved keychain credentials — don't script the mount with a password
   inline).
 - Archived masters live under `/Volumes/musicarchive/taper-masters/<show>/`.

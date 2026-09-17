@@ -11,3 +11,7 @@ cover.jpg
 
 # Local session/task bookkeeping, not project content.
 .claude/scheduled_tasks.lock
+
+# Real personal values behind the <PLACEHOLDER> tokens used in CLAUDE.md
+# and the skills — this repo is public, so these never get committed.
+.claude/local-values.md

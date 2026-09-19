@@ -15,3 +15,4 @@ cover.jpg
 # Real personal values behind the <PLACEHOLDER> tokens used in CLAUDE.md
 # and the skills — this repo is public, so these never get committed.
 .claude/local-values.md
+stats/data.json

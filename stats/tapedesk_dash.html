@@ -1,0 +1,42 @@
+<div class="watch-bar">
+    <span class="dot"></span>
+    <span class="watch-text"><b>Watching</b> archive.org every 30 minutes. Any new <b>Creekfest</b> (North Ferrisburgh VT) upload is pulled in automatically; new <b>Snugfest</b> and <b>tgakidis</b> uploads are reported first. A library email goes out at 7am daily. Nothing new as of this refresh.</span>
+  </div>
+
+  <p class="section-label">Library at a glance</p>
+  <div class="stats" id="tiles"></div>
+
+  <div class="attn" id="attn">
+    <h3>46 tracks are not syncing to iCloud, so they won't reach the iPhone</h3>
+    <p>Music reports a problem status on these, out of everything added since Aug 25: <b>18 removed</b> (the LDB show, filed under the artist name "Live Dead and Brothers" · <code>Zen Barn - Live 2025-04-01</code>), <b>26 duplicate</b> (Soule Monde NYE 19, Organ Fairchild 6, one John Craigie Paradiso track) and <b>2 error</b> (Ryan Montbleau, Higher Ground). Another <b>55</b> are still waiting on their first upload, including today's North Mississippi Allstars. They all play fine on the Mac, and the fix is a decision, not a retry: ask before touching them.</p>
+  </div>
+
+  <p class="section-label">Disk space</p>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="panel-title" id="disk-title"></span>
+      <span class="panel-note" id="disk-note"></span>
+    </div>
+    <div class="diskbar" id="diskbar" role="img" aria-label="Disk usage breakdown"></div>
+    <div class="legend" id="disk-legend"></div>
+    <div class="drives" id="drives"></div>
+  </div>
+
+  <p class="section-label">Additions over time</p>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="panel-title">Tracks added per day, and total hours of music</span>
+      <span class="panel-note" id="tl-note"></span>
+    </div>
+    <svg class="chart" id="tl-chart" viewBox="0 0 760 250" role="img" aria-label="Tracks added per day with cumulative hours"></svg>
+    <div class="chart-key"><span><i style="background:var(--accent)"></i>tracks added that day</span><span><i style="background:var(--good)"></i>cumulative hours in the library (right axis)</span></div>
+  </div>
+
+  <p class="section-label">Free space over time</p>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="panel-title">Free space on the Mac</span>
+      <span class="panel-note">hollow points were reported during earlier sessions · filled points are measured at each refresh</span>
+    </div>
+    <svg class="chart" id="free-chart" viewBox="0 0 760 200" role="img" aria-label="Free disk space over time"></svg>
+  </div>

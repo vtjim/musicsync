@@ -66,7 +66,7 @@ def main():
     for f in sorted(flacs, key=lambda x: x["name"]):
         name = f["name"]
         size = int(f["size"])
-        dest = os.path.join(destdir, name)
+        dest = os.path.join(destdir, os.path.basename(name))  # items may keep files in a subfolder; flatten locally
         url = f"https://archive.org/download/{identifier}/" + urllib.parse.quote(name)
         print(f"downloading: {name}")
         ok, got = download(url, dest, size)

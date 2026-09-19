@@ -634,7 +634,7 @@ have found it.
 | Soule Monde | Town Hall Theater, Middlebury VT (NYE) — 2025-12-31 | 19 | `soulemonde2025-12-31.akg414.m950` | no embedded tags — tagged by set/track number ("Set 1 Track 01" etc.) to match the USB master's existing convention; USB folder renamed from inconsistent "Soulemonde" to "Soule Monde" to match the other two Soule Monde shows |
 | Hug Your Farmer | 2025-11-21 | 24 | `hyf20251121t23` | no embedded tags — generic "Track N". One track failed XLD conversion on the first pass, succeeded on a resumed retry — no data lost |
 | LDB | "Les Brers In A Minor Jam" (Allman Brothers/Dead tribute set), Nectar's — 2025-04-01 | 18 | **not on archive.org** — direct zip download, see note above | no embedded tags, but real song titles were in the filenames (a Dead/Allmans setlist) — tagged from those |
-| All Night Boogie Band | "Jam in the Parks" — 2026-08-29 | 9 | `anbb2026-08-29` (archive.org identifier reads "2029" due to an uploader typo — the content is the real 2026-08-29 show) | no embedded tags — generic "Track N". Same event Dobbs' Dead played that day, already documented above |
+| All Night Boogie Band | "Jam in the Parks" — 2026-08-29 | 9 | `anbb2029-08-29.VERMONT_TAPERS_COLLECTIVE_FLAC` (the identifier really does read "2029" due to an uploader typo — the content is the real 2026-08-29 show; an earlier note here gave the wrong id `anbb2026-08-29`, which doesn't exist) | no embedded tags — generic "Track N". Same event Dobbs' Dead played that day, already documented above |
 
 Two zips for undocumented Zach Nugent shows (`2024-04-05`, `2024-04-08` —
 plus a duplicate download of the 04-08 one) were found sitting in
@@ -766,6 +766,60 @@ the `creator` field as-is rather than split it. Tagged generic "Track
 13"-"Track 20" (no real titles in the description for this range),
 album `Live at Radio Bean, Burlington VT - 2026-09-06 (Farewell
 Celebration)`, 8 tracks, no local folder.
+
+## Sep 19: Snugfest 2026, North Mississippi Allstars, and the stats tooling
+
+**Snugfest 2026** (Middlebury Snowbowl, Hancock VT, 2026-09-13 — a different
+venue from the Ripton editions above) was posted in full by the same taper
+(Ted Gakidis, uploader `tgakidis@gmail.com`). No local folder for any of
+these; verified 67/67 in Music twice, mirrored to the USB master and
+TAPEBACKUP, FLAC deleted.
+
+| Artist | Tracks | Source | Notes |
+|---|---|---|---|
+| Jennifer Hartswick & Nick Cassarino | 8 | `jenniferhartswick2026-09-13.mk8.sbd.flac` | tags embedded correctly |
+| Hot Pickin' Party | 12 | `hotpickinparty2026-09-13.mk8.sbd` | artist/titles missing on 11 of 12 — tagged from setlist |
+| Bob Wagner | 14 | `bobwagner2026-09-13.mk8.mk4v` | album tag typo `026-09-13`; 3 tracks unidentified, kept "Track N" |
+| Snugfest Big Band | 11 | `snugfestbigband2026-09-13.mk8.sbd` | Paczkowski/Lawton/Hartswick/Cassarino/Edgar; titles fixed from setlist |
+| Mike & Tessa Gordon | 22 | `miketessa2026-09-13.mk8.nbob.pfa.m2d2.pr4` | album typo "Sunugfest" fixed |
+| North Mississippi Allstars | 23 | `nma2026-08-20.mk4` | Sweetwater Music Hall, Mill Valley CA. Three tapes exist (MK4 1.7GB, MK21 2.9GB, MK2s 3.2GB — the latter two 32-bit float 96kHz). MK4 chosen to stay under iCloud's ~200MB/track limit; the others were not pulled |
+
+- **Search by uploader, not just text.** The text search (`Snugfest`) surfaced
+  only 1 of 5 sets for days. `uploader:tgakidis@gmail.com AND addeddate:[...]`
+  found all of them. Same lesson as the Mark Van Blunk email note above.
+- **`getshow.py` now flattens subfolders.** Some items keep FLACs in a subfolder
+  (`nma2026-08-20-mk4/...`); it used to fail every file with ENOENT. Fixed.
+- **Music renames imported files by title** (`01 track01.m4a`), so matching a
+  source file to a Music track by file name fails. `stats/tag_show.py` matches by
+  **duration** (ties broken by embedded title), resolves persistent IDs once, and
+  then tags one track per `osascript` call with retries (`stats/tag_track.sh`).
+- **`df /` lies on this Mac.** It reports the read-only system volume (19% used).
+  The real disk is `/System/Volumes/Data` (~83% used, ~41GB free of 245GB on 2026-09-19).
+- **Bulk `location` reads throw on cloud-only tracks** in JXA; read it per track
+  with try/catch (see `stats/music_dump.js`).
+- **46 tracks are not syncing to iCloud** (as of 2026-09-19): 18 `removed` (the LDB
+  show, filed by Music under the artist "Live Dead and Brothers"), 26 `duplicate`
+  (Soule Monde NYE 19, Organ Fairchild 6, 1 John Craigie Paradiso), 2 `error` (Ryan
+  Montbleau). They play on the Mac but will not reach the iPhone. Not yet fixed —
+  needs Jim's OK because the fix is bulk Music edits.
+- **VTMUSIC (car stick) was not attached** during this batch; it last synced at 1,298
+  tracks and needs the 90 newer ones. TAPEBACKUP was synced (1,388 = master).
+
+### Stats page and the two artifacts
+
+- **Tape Desk** (`https://claude.ai/code/artifact/d515b1da-20e9-424d-8f4f-0cbb74a6c498`) is
+  Jim's *personal* view: hours of music, disk space and what the library takes up, a
+  timeline of additions, drive status, and the session log. **Setlist Ledger** is the
+  *public* cousin (show list with archive.org links, `vtjim.github.io/setlist-ledger`).
+  Keep them separate.
+- Regenerate the Tape Desk: `python3 stats/build_stats.py` (reads Music via JXA, scans the
+  USB master, appends a disk snapshot to `stats/snapshots.jsonl`), save the live page with
+  `Artifact read ... path=index.html`, then
+  `python3 stats/render_tapedesk.py <saved index.html> <out.html> --sets <N>` and
+  republish `<out.html>` to the same URL. The numbers use "added since 2026-08-25" as the
+  definition of the taper library in Music, so a few non-taper adds are included.
+- Ledger source of truth for the public site is a clone at `~/dev/setlist-ledger`
+  (`origin` = GitHub). Edit its `SHOWS` array, push, and republish the artifact from the same block.
 
 ## Daily 7am library-update email
 

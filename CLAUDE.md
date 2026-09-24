@@ -1004,3 +1004,24 @@ New tooling: `stats/run_show.sh <id> <spec.json>` runs download, convert/import,
 USB mirror, and local delete for one show; `stats/run_batch.sh` chains several; `stats/usb_add.py`
 builds tagged MP3s for the USB master. `tag_show.py` now breaks duration ties by filename stem for
 untagged files. Gotcha: `set -- $x` word-splitting does not work under zsh, so pass arguments explicitly.
+
+## Sep 24: iCloud "not syncing" cleanup
+
+Re-checked the 46 problem-status tracks (18 removed, 26 duplicate, 2 error). Findings:
+
+- **LDB (18 "removed") — fixed.** The album existed twice: my ALAC import (clean tags, cloud status `removed`)
+  and an older MP3 copy (from Jim's original zip) that was `uploaded` but had track number 0 and raw
+  filenames as titles. Retagged the 18 uploaded MP3 copies (title, track number, year) by persistent ID,
+  verified 18/18 twice, then deleted the 18 `removed` ALAC copies by persistent ID (each re-checked as
+  `removed` immediately before deleting). Result: one 18-track album, all `uploaded`. The lossless ALAC
+  copy is gone from Music; the source FLAC was deleted earlier, so only the MP3 remains in Music, plus
+  the USB master.
+- **Soule Monde NYE (19), Organ Fairchild (6), Craigie Paradiso (1), Ryan Montbleau (2 error) — not
+  fixable by tags.** No same-duration twin exists in the library for any of them (checked), so the
+  `duplicate`/`error` status comes from iCloud's side, most likely ghosts of the blank-tagged copies
+  deleted on 2026-09-16. Experiment in progress: 6 Organ Fairchild tracks were re-encoded from FLAC with
+  ffmpeg (different bytes) and added alongside the originals; check whether the new copies reach
+  `uploaded`, and if so delete the 6 old `duplicate` ones. Scratch files: `of2024-07-13/` (delete when done).
+- **Gotcha: in JXA, never mix bulk property arrays (`tr.cloudStatus()`) with `tr[i]` element access.**
+  The indices do not line up and you get another track's artist/album for a status. Read every property
+  you need as a bulk array, as `stats/music_dump.js` does.

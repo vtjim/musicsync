@@ -50,7 +50,7 @@
     '<div class="drive"><b>TAPEBACKUP</b>' + (tb ? '<span class="st on">connected</span>' : '<span class="st off">not connected</span>') +
     '<p>' + (tb ? n1(tb.used_gb) + ' of ' + n0(tb.total_gb) + ' GB used. Full mirror of the USB master, checked track for track (' + n0(MS.tracks) + ' = ' + n0(MS.tracks) + ').' : 'Plug in to refresh the backup.') + '</p></div>' +
     '<div class="drive"><b>VTMUSIC</b>' + (dr.vtmusic ? '<span class="st on">connected</span>' : '<span class="st off">not connected</span>') +
-    '<p>' + (dr.vtmusic ? 'Car stick attached.' : 'The car stick. It last synced at 1,298 tracks, so it needs ' + n0(behind) + ' more (Snugfest 2026 and North Mississippi Allstars) the next time it is plugged in.') + '</p></div>';
+    '<p>' + (dr.vtmusic ? 'Car stick attached.' : 'The car stick. It last synced at 1,298 tracks, so it needs ' + n0(behind) + ' more (Snugfest 2026, North Mississippi Allstars and the Sep 24 batch) the next time it is plugged in.') + '</p></div>';
 
   // additions timeline
   const tl = D.timeline;

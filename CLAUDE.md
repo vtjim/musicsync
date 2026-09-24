@@ -980,3 +980,27 @@ nohup caffeinate -dims > /dev/null 2>&1 &
 Print a per-track progress line as each file downloads and converts —
 Jim likes watching the work happen rather than getting only a final
 summary.
+
+## Sep 24: new-release scan and 7 shows imported
+
+Scanned archive.org by `addeddate` since 09-17 and imported these (no local folder; verified in Music
+twice, mirrored to the USB master and TAPEBACKUP, FLAC deleted). Only the DSO and Dogs shows are
+Grand Point North, Burlington VT; the others are from elsewhere.
+
+| Artist | Date/Venue | Tracks | Source | Notes |
+|---|---|---|---|---|
+| All Night Boogie Band | Waterhole Lounge, Saranac Lake NY, 2026-09-17 | 21 | `anbb2026-09-17.VERMONT_TAPERS_COLLECTIVE_FLAC` | no embedded tags, tagged from setlist ("Track 5" unnamed by taper) |
+| Dark Star Orchestra | Grand Point North, Burlington VT, 2026-09-20 | 23 | `dso2026-09-20.DSOGrandPointNorth2026BurlingtonVT` | no embedded tags, tagged from setlist; Grace Potter / Jason Crosby guests |
+| Dogs In A Pile | Grand Point North, 2026-09-20 | 8 | `DogsinaPile2026-09-20.DogsGPNBurlingtonVT2026` | tagged from setlist (Kristofferson / Grace Potter / Crosby guests) |
+| Infamous Stringdusters | Pepsi Amphitheater, Flagstaff AZ, 2026-09-19 | 17 | `isd2026-09-19.flac24-schoepsmk41` | 24-bit, tagged from setlist |
+| Daniel Donato's Cosmic Country | Cain's Ballroom, Tulsa OK, 2026-09-20 | 21 | `danieldonato2026-09-20` | tagged from setlist |
+| Pink Talking Fish | The Capitol Theatre, Port Chester NY, 2026-09-19 (The Centennial Band) | 32 | `ptf2026-09-19.tf-11.sbd.flac` | SBD, taped by Ted Gakidis; titles from item's per-file titles |
+| Dead Floyd | Belly Up, Aspen CO, 2026-09-19 | 19 | `deadfloyd2026-09-19` | titles from item's per-file titles |
+
+Not pulled (ask first): second tape of Dogs In A Pile 09-06, second Funky Dawgz 09-04 tape, NMA 09-20,
+Widespread Panic 09-18/19, Guster 09-18/19, and other artists from the same scan.
+
+New tooling: `stats/run_show.sh <id> <spec.json>` runs download, convert/import, tag, double-verify,
+USB mirror, and local delete for one show; `stats/run_batch.sh` chains several; `stats/usb_add.py`
+builds tagged MP3s for the USB master. `tag_show.py` now breaks duration ties by filename stem for
+untagged files. Gotcha: `set -- $x` word-splitting does not work under zsh, so pass arguments explicitly.

@@ -19,7 +19,10 @@ for i, f in enumerate(files):
     if len(cands) > 1:  # break duration ties with the title Music imported from the file's own tag
         t = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format_tags=title", "-of", "csv=p=0", f],
                            capture_output=True, text=True).stdout.strip()
-        cands = [c for c in cands if c["name"].strip() == t.strip()] or cands
+        stem = os.path.splitext(os.path.basename(f))[0]
+        cands = [c for c in cands if c["name"].strip() in (t.strip(), stem)] or cands
+        if len(cands) > 1 and t.strip() == "":
+            cands = [c for c in cands if c["name"].strip() == stem] or cands
     if len(cands) != 1:
         sys.exit(f"AMBIGUOUS/NO MATCH track {i+1} ({os.path.basename(f)}, {d:.1f}s): {len(cands)} candidates {[c['name'] for c in cands]}")
     used.add(cands[0]["pid"]); plan.append((i + 1, cands[0]["pid"], spec["titles"][i]))

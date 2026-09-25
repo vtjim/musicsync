@@ -1025,3 +1025,16 @@ Re-checked the 46 problem-status tracks (18 removed, 26 duplicate, 2 error). Fin
 - **Gotcha: in JXA, never mix bulk property arrays (`tr.cloudStatus()`) with `tr[i]` element access.**
   The indices do not line up and you get another track's artist/album for a status. Read every property
   you need as a bulk array, as `stats/music_dump.js` does.
+
+## Sep 25: standing rule and JRAD Boston
+
+- **Always pull new JRAD shows automatically** (Jim's standing instruction, 2026-09-25) — no approval needed;
+  everything else still gets confirmed first. The daily 8:17am scan cron carries this rule.
+- Imported `jrad2026-09-24` (Joe Russo's Almost Dead, MGM Music Hall, Boston MA, 17 tracks, Mix Pre 6 taped by
+  Jeff Travitz). No embedded tags; titles from filenames with punctuation fixed ("Don't Ease Me In",
+  "Long Black Veil" for the file's "Vail"). Verified 17/17 in Music twice, mirrored to USB master and TAPEBACKUP.
+- Fixed the iCloud `removed`/`duplicate` tracks for LDB (18) and Organ Fairchild (6): see the Sep 24 section.
+  A fresh ffmpeg re-encode of the FLAC re-imported alongside the flagged copy reaches `uploaded`, then the flagged
+  copy is deleted by persistent ID. Soule Monde NYE (19), one Craigie and two Montbleau tracks remain.
+- The Setlist Ledger header now shows "Last updated with new shows" from `LAST_UPDATED` in `index.html`; bump it
+  whenever shows are added.

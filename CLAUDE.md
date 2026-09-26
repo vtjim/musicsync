@@ -1038,3 +1038,12 @@ Re-checked the 46 problem-status tracks (18 removed, 26 duplicate, 2 error). Fin
   copy is deleted by persistent ID. Soule Monde NYE (19), one Craigie and two Montbleau tracks remain.
 - The Setlist Ledger header now shows "Last updated with new shows" from `LAST_UPDATED` in `index.html`; bump it
   whenever shows are added.
+
+## Sep 26: Dead Floyd Hotchkiss and Jerry's Middle Finger China Camp
+
+| Artist | Date/Venue | Tracks | Source | Notes |
+|---|---|---|---|---|
+| Dead Floyd | Big B's, Hotchkiss CO, 2026-09-18 | 17 | `deadfloyd2026-09-18` | titles from the item's per-file titles. One track (`d01t08`) failed XLD conversion; converted it with `ffmpeg -c:a alac` and imported just that file. **Do not rerun `flac-pipeline.sh` after a partial failure** — it re-imports every existing `.m4a`, duplicating tracks; import the missing file alone, then run `tag_show.py`. |
+| Jerry's Middle Finger | China Camp Bowl, San Rafael CA, 2026-06-28 | 19 | `jmf2026-06-28.JerrysMiddleFinger2026-06-28.flac24` | SBD (FOH by Betty Cantor-Jackson), titles from the description; "Might High" corrected to "Mighty High" |
+
+No local folders; verified in Music twice, mirrored to USB master and TAPEBACKUP (VTMUSIC not attached, now behind by the JRAD and these two shows).

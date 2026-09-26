@@ -1047,3 +1047,7 @@ Re-checked the 46 problem-status tracks (18 removed, 26 duplicate, 2 error). Fin
 | Jerry's Middle Finger | China Camp Bowl, San Rafael CA, 2026-06-28 | 19 | `jmf2026-06-28.JerrysMiddleFinger2026-06-28.flac24` | SBD (FOH by Betty Cantor-Jackson), titles from the description; "Might High" corrected to "Mighty High" |
 
 No local folders; verified in Music twice, mirrored to USB master and TAPEBACKUP (VTMUSIC not attached, now behind by the JRAD and these two shows).
+
+- Sep 26 (daily scan, standing JRAD rule): imported `jrad2026-09-25` — Joe Russo's Almost Dead, Alley by Pier 17,
+  New York NY (free street show, taped by Jeff Travitz), 10 tracks, titles from filenames. Verified 10/10 in Music
+  twice, mirrored to USB master and TAPEBACKUP. Scan also listed NMA 9/25 and Robyn Hitchcock 9/25 (not pulled).

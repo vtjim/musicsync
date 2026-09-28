@@ -487,9 +487,13 @@ apply.
 on 2026-09-07 — Apple Music copies every import into its own Media folder
 (`~/Music/Music/Media.localized/Music/...`) and never references this
 directory, so keeping them was pure duplication (6.5 GB). Re-convert from
-the FLACs if a local ALAC copy is ever needed. Note the shell cannot read
-`~/Music` at all (macOS TCC blocks it) — `du`/`ls` there return empty, so
-verify Music-side files through AppleScript's `location` property instead.
+the FLACs if a local ALAC copy is ever needed. **Update, 2026-09-28: the
+shell can now read `~/Music`** (`du`/`ls` return real results) — the TCC
+block documented here since early in the project is gone, presumably from
+a Full Disk Access grant made for some other reason. Re-check with a
+plain `ls ~/Music` before assuming it's still blocked; AppleScript's
+`location` property remains the reliable way to confirm what's actually
+in the library either way.
 
 A 5-track Vermont Tapers Collective **AUD** tape of the 2026-06-05 Lara
 Cwass Band show was imported and then deliberately removed from Music,

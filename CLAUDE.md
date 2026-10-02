@@ -1055,3 +1055,22 @@ No local folders; verified in Music twice, mirrored to USB master and TAPEBACKUP
 - Sep 26 (daily scan, standing JRAD rule): imported `jrad2026-09-25` — Joe Russo's Almost Dead, Alley by Pier 17,
   New York NY (free street show, taped by Jeff Travitz), 10 tracks, titles from filenames. Verified 10/10 in Music
   twice, mirrored to USB master and TAPEBACKUP. Scan also listed NMA 9/25 and Robyn Hitchcock 9/25 (not pulled).
+
+## Oct 2: JRAD archival upload, standing rule covers old shows too
+
+Daily scan after several days away (last checked 2026-09-29 12:42) found one new JRAD item:
+`jrad2016-10-08.akg393.duro.flac16` — Joe Russo's Almost Dead, Brooklyn Bowl, New York NY, 2016-10-08
+(taped by Rick Duro), 22 tracks. This is an archival show just now posted, not a recent performance —
+applied the standing "always pull new JRAD" rule to it anyway, since the rule has no date qualifier.
+Tags were already embedded correctly (crowd/setlist titles), only minor arrow-notation cleanup needed.
+Verified 22/22 in Music, mirrored to USB master, local FLAC deleted. TAPEBACKUP was not attached, so
+it's now behind by this show (sync next time it's plugged in).
+
+Everything else in the gap-scan (several days of etree uploads) was unrelated artists or shows already
+in the library under a different tape; only one Ted Gakidis upload (Wood Brothers 9/28) and nothing from
+Mark Van Blunk. Disk free space held around 9-11 GB across the gap.
+
+**Reminder: `~/Library/Messages/Attachments` is 32 GB and growing — the single largest non-project
+consumer of disk space found during this stretch**, bigger than this project's own local footprint.
+Not touched (needs clearing from within Messages/Storage settings, not a script), but worth flagging
+again if disk gets tight — it's probably still the biggest lever, ahead of Music's "Optimize Storage".

@@ -1074,3 +1074,19 @@ Mark Van Blunk. Disk free space held around 9-11 GB across the gap.
 consumer of disk space found during this stretch**, bigger than this project's own local footprint.
 Not touched (needs clearing from within Messages/Storage settings, not a script), but worth flagging
 again if disk gets tight — it's probably still the biggest lever, ahead of Music's "Optimize Storage".
+
+## Oct 3: five approved shows, after Jim freed ~26 GB
+
+Pulled the five shows that had been pending approval (Jim freed disk space first, 9.8 GB -> 36 GB free,
+cause not investigated by Claude — he said "i freed up space"). All verified in Music + USB master,
+local FLACs deleted.
+
+| Artist | Date/Venue | Tracks | Source | Notes |
+|---|---|---|---|---|
+| Lara Cwass Band | Einstein's Tap House, Burlington VT, 2026-09-25 | 9 | `lcwass2026-09-25.VERMONT_TAPERS_COLLECTIVE_FLAC` | VTC, mostly no embedded titles — tagged from setlist. The description's numbered list has a duplicated "04." (typo) covering two songs ("Time > Breathe" then "A Meeting by the River") and the last track's two listed titles ("Track 8" / "Little Jimmy") don't cleanly resolve to one name — tagged as "Track 8 > Little Jimmy" rather than guessing one |
+| Dead Floyd | Oktoberfest, Highlands Ranch CO, 2026-09-26 | 13 | `deadfloyd2026-09-26` | titles from the item's per-file titles |
+| Dogs In A Pile | Hogs Hollow Saloon, Berwick PA, 2026-09-05 | 11 | `DogsinaPile2026-09-05` | titles from the item's per-file titles. Distinct from the band's Adirondack Fest sets (09-04/09-06) and the two Grand Point North sets already in the library |
+| Three Piece Meal | The 126, Burlington VT, 2026-09-19 | 16 | `TPM2026-09-19.VERMONT_TAPERS_COLLECTIVE_FLAC` | VTC, new artist to the library. No setlist posted at all — all 16 tracks generic "Track N" |
+| Oliver Wood | Vinegar Hill Music Theater, Arundel ME, 2026-09-28 | 27 | `wb2026-09-28.elam260.tk60.sx-r4.flac` | taped by Ted Gakidis. Billed as "The Wood Brothers, Oliver Wood" in the Sep-27 scan summary, but the item's own `creator` field is just "Oliver Wood" — a solo show, tagged under his name alone, not the band |
+
+Setlist Ledger now 108 shows, 1,632 tracks.

@@ -1090,3 +1090,12 @@ local FLACs deleted.
 | Oliver Wood | Vinegar Hill Music Theater, Arundel ME, 2026-09-28 | 27 | `wb2026-09-28.elam260.tk60.sx-r4.flac` | taped by Ted Gakidis. Billed as "The Wood Brothers, Oliver Wood" in the Sep-27 scan summary, but the item's own `creator` field is just "Oliver Wood" — a solo show, tagged under his name alone, not the band |
 
 Setlist Ledger now 108 shows, 1,632 tracks.
+
+## Oct 3 (daily scan): JRAD Salt Shed, Chicago
+
+Imported `jrad2026-10-02` — Joe Russo's Almost Dead, Salt Shed, Chicago IL, 20 tracks, Mix Pre6 taped
+by Jeff Travitz (standing JRAD rule). No embedded tags; titled from filenames. One typo worth noting:
+the uploader's filename read "The Love Each Other.flac" — corrected to "They Love Each Other", the real
+Grateful Dead song, rather than tagging the typo literally. Verified 20/20 in Music twice, mirrored to
+USB master. TAPEBACKUP not attached. Rest of the day's scan had no other Vermont Tapers Collective,
+Gakidis, or Van Blunk uploads, and nothing else from bands already in the library.

@@ -1122,3 +1122,13 @@ Other new items not pulled: Three Piece Meal 2026-10-10 (VTC), and alternate tap
   free space went 7.9 GB -> 122 GB, `~/Music/Music` 126 GB -> 9.1 GB. Tracks now stream from iCloud on the Mac;
   anything not `uploaded` (removed/duplicate/error/unknown) stays local. Photos is only 21 MB, not a factor.
 - `vm_bundles` (9.6 GB), Messages (~8 GB) remain as optional lever if disk gets tight again.
+
+**Brewster River Jam Fest 2026** (Brewster River Campground, Jeffersonville VT, Saturday 2026-10-10, the 2nd annual;
+lineup included All Night Boogie Band, Lara Cwass Band, Bob Wagner, Josh Dobbs — bands already in the library).
+Tapers post in pieces, so keep watching `uploader:shemp1972@gmail.com` (Vermont Tapers Collective) and title "Brewster".
+First set up 2026-10-12, pulled from a link Jim pasted: Lyle Brewer, `lylebrewer20261010t07`, 9 tracks, no embedded
+tags and generic "Track 1-9" (no setlist); the item's `creator` reads "Lyle Brewster" (typo) — tagged "Lyle Brewer" to
+match the existing Higher Ground opener. Verified 9/9 in Music twice and 9/9 on the USB master, local folder deleted.
+Unchecked: `TPM2026-10-10.VERMONT_TAPERS_COLLECTIVE_FLAC` (Three Piece Meal, same uploader/date) — probably also from
+this festival but archive.org was erroring out when I tried to read its description. archive.org search/metadata
+was returning 500/502/504 for much of 2026-10-12; retry with backoff rather than concluding "nothing there".

@@ -1132,3 +1132,16 @@ match the existing Higher Ground opener. Verified 9/9 in Music twice and 9/9 on 
 Unchecked: `TPM2026-10-10.VERMONT_TAPERS_COLLECTIVE_FLAC` (Three Piece Meal, same uploader/date) — probably also from
 this festival but archive.org was erroring out when I tried to read its description. archive.org search/metadata
 was returning 500/502/504 for much of 2026-10-12; retry with backoff rather than concluding "nothing there".
+
+**Maple Roots Festival, Morse Farm, Montpelier VT, 2026-07-25** (imported 2026-10-12, Jim said yes to both) — matrix tapes
+by Hunting Sound Man (DPA 4006 + SBD -> MixPre-10 II, 24/96), uploaded 2026-10-11. No local folder; verified in Music
+twice and on the USB master, local FLACs deleted. Album: `Live at Maple Roots Festival, Montpelier VT - 2026-07-25`.
+Tagged under the item's `creator` ("... & Friends"), so these are separate artists from "Lara Cwass Band" / "Bob Wagner".
+
+| Artist | Tracks | Source | Notes |
+|---|---|---|---|
+| Lara Cwass & Friends | 8 | `cwass-friends26-07-25.mtx.hsm.flac24` | titles from the posted setlist; "Trouble Every Day >". All 8 reached `uploaded` right away **even at 247-279 MB**, so the ~200 MB iCloud ceiling noted above did not bite on these |
+| Bob Wagner & Friends | 16 | `bobwagner26-07-25.mtx.hsm.flac24` | only track 1 ("Welcome") named in the description; the rest generic "Track 2"-"Track 16". Cloud status `unknown` just after import (largest track 217 MB) — recheck |
+
+Gotcha: in zsh, a bare `echo ======` in a command chain is parsed as `=` command expansion and errors with
+`===== not found`, killing the rest of the `;` chain (the second show silently never started). Quote it or drop it.

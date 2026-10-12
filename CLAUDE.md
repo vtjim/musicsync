@@ -1099,3 +1099,26 @@ the uploader's filename read "The Love Each Other.flac" — corrected to "They L
 Grateful Dead song, rather than tagging the typo literally. Verified 20/20 in Music twice, mirrored to
 USB master. TAPEBACKUP not attached. Rest of the day's scan had no other Vermont Tapers Collective,
 Gakidis, or Van Blunk uploads, and nothing else from bands already in the library.
+
+## Oct 12: power outage recovery, disk crisis, JRAD Grand Rapids
+
+Back from a power outage, the daily scan (gap since Oct 3) found `jrad2026-10-03` — Joe Russo's Almost Dead,
+20 Monroe Live, Grand Rapids MI (Mix Pre6/U89, taped by Jeff Travitz), 16 tracks — and imported it under the
+standing JRAD rule. Titles from filenames ("Music Never Stopped" -> "The Music Never Stopped", "Thrownin Stones"
+-> "Throwing Stones"). Verified 16/16 in Music twice and 16/16 on the USB master, local folder deleted, Update
+Cloud Library fired. TAPEBACKUP and VTMUSIC not attached (both behind). One track hit repeated HTTP 500s from
+archive.org and downloaded very slowly on a re-run of `getshow.py`; the re-run only fetches what is missing.
+Other new items not pulled: Three Piece Meal 2026-10-10 (VTC), and alternate tapes `jrad2026-10-02.akg483` and
+`jrad2026-09-24.akgck63.zoomf8pro.flac24` of shows already in the library.
+
+- **Disk hit 100% (1.2 GB free).** Causes: ~12.6 GB of three half-finished Grateful Dead folders in this dir
+  (gd1979-11-30, gd1980-08-31, gd1982-04-03, left by an undocumented Oct 11 session; Jim approved deleting them,
+  not in Music) plus the Music library itself at 126 GB. Other recent undocumented imports found in Music:
+  Grateful Dead 1971-07-02 (27), 1979-02-17 (17), 1979-09-04 (19, 16 of them cloud status `unknown`), Multibeast
+  and Nico Suave at Brewster River Jam 2025-10-25. Not logged here; worth confirming with Jim.
+- **Correction: the Mac Music app has NO "Optimize Mac Storage" setting** (earlier notes above that say to toggle
+  it are wrong — that's a Photos / iPhone feature). What works: smart playlist with iCloud Status is Uploaded
+  (+ Date Added after 2026-08-25), select all, right-click, **Remove Download**. Jim did this on 2026-10-12:
+  free space went 7.9 GB -> 122 GB, `~/Music/Music` 126 GB -> 9.1 GB. Tracks now stream from iCloud on the Mac;
+  anything not `uploaded` (removed/duplicate/error/unknown) stays local. Photos is only 21 MB, not a factor.
+- `vm_bundles` (9.6 GB), Messages (~8 GB) remain as optional lever if disk gets tight again.

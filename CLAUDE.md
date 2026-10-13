@@ -1161,3 +1161,18 @@ band-name keyword scan had missed because it only matched bands already in the l
 deleted, cloud update fired. **Lesson: for a festival watch, list EVERY upload by the known tapers' uploaders for the
 date range, not a keyword filter on band names** — new-to-the-library bands slip through.
 Brewster River Jam so far (4 shows in library): Lyle Brewer, Lara Cwass Band, Green Mountain Sound, Clive.
+
+**Oct 13 (Brewster River Jam, sets 5-7, second taper):** a second taper, uploader `mdamicovt@yahoo.com` (same one who
+posted Lara Cwass Band above), recorded much of the same day and posted 6 items on 10-12. New shows pulled from him:
+`Ponyhustle.2026.10.10` (10 tracks, titled; an unexplained trailing " +" on tracks 8-10 was dropped, "(unknown)" ->
+"Track 9"), `allstarjam.2026.10.10` (Brewster River All-Star Jam, 3 tracks: tuning / Trouble Every Day / The Weight),
+`AcidWash.2026.10.10` (5 tracks; "Life During Wartime" tagged "(w/ Cotter Ellis)" per the description). Verified in
+Music twice and on the USB master, local folders deleted, cloud update fired.
+**Second tapes of shows already in the library, NOT pulled:** `Clive.2026.10.10` and `GMS.2026.10.10` (mdamicovt
+tapes of Clive and Green Mountain Sound; Clive tracks 3-4 named "The Wastelands" / "Mama", GMS has titles Free,
+Ophilia, Tweezer) and VTC's `acidwash20261010t03` (4 tracks, vs. the 5-track mdamicovt tape used). Brewster River Jam
+total now in library: 7 sets (Lyle Brewer, Lara Cwass Band, Green Mountain Sound, Clive, Ponyhustle, All-Star Jam,
+Acid Wash). Still missing from the lineup: All Night Boogie Band, Bob Wagner, Forest Station, Ali McGuirk, Cotter &
+Friends and others.
+**Gotcha repeated:** `for p in "a b"; do set -- $p ...` under zsh passes the whole string as `$1` — it created three
+empty junk folders (removed with rmdir). Pass arguments explicitly, one command per show.

@@ -1145,3 +1145,11 @@ Tagged under the item's `creator` ("... & Friends"), so these are separate artis
 
 Gotcha: in zsh, a bare `echo ======` in a command chain is parsed as `=` command expansion and errors with
 `===== not found`, killing the rest of the `;` chain (the second show silently never started). Quote it or drop it.
+
+**Oct 13 (Brewster River Jam, second set):** `lcwass2026-10-10` — Lara Cwass Band, Brewster River Jam Fest,
+Jeffersonville VT, 2026-10-10, 6 tracks, uploaded by `mdamicovt@yahoo.com` (a different uploader from the Lyle Brewer
+set's `shemp1972`, so **search Brewster uploads by title/date, not just one uploader**). Only 3 titles in the item
+("Intro", "Whipping Post", "I Hear Voices"); the other three files are literally named `2026.10.10`, tagged
+"Track 2/3/6". Verified 6/6 in Music twice and on the USB master, local folder deleted, cloud update fired.
+Not pulled (ask first): `DogsinaPile2026-10-10.Dogs2026-10-10KingofPrussiaPA` (Upper Merion Township Park, King of
+Prussia PA, 21 tracks, 2.2 GB, full setlist posted, band already in library).

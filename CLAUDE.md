@@ -1153,3 +1153,11 @@ set's `shemp1972`, so **search Brewster uploads by title/date, not just one uplo
 "Track 2/3/6". Verified 6/6 in Music twice and on the USB master, local folder deleted, cloud update fired.
 Not pulled (ask first): `DogsinaPile2026-10-10.Dogs2026-10-10KingofPrussiaPA` (Upper Merion Township Park, King of
 Prussia PA, 21 tracks, 2.2 GB, full setlist posted, band already in library).
+
+**Oct 13 (Brewster River Jam, sets 3 and 4):** Jim spotted two more uploads from `shemp1972@gmail.com` (VTC) that my
+band-name keyword scan had missed because it only matched bands already in the library: `greenmountainsound20261010t06`
+(Green Mountain Sound, 6 tracks; titles "Free", "Ophelia", "Love Me Like A Man", "Tweezer", rest "Track N") and
+`clive20261010t04` (Clive, 5 tracks, all generic "Track N"). Verified in Music twice and on the USB master, local folders
+deleted, cloud update fired. **Lesson: for a festival watch, list EVERY upload by the known tapers' uploaders for the
+date range, not a keyword filter on band names** — new-to-the-library bands slip through.
+Brewster River Jam so far (4 shows in library): Lyle Brewer, Lara Cwass Band, Green Mountain Sound, Clive.

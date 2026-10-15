@@ -41,7 +41,7 @@
   $("diskbar").innerHTML = segs.map(s => '<div class="' + s[0] + '" style="width:' + (s[1] / DK.total_gb * 100) + '%" title="' + s[2] + ': ' + n1(s[1]) + ' GB"></div>').join("");
   $("disk-legend").innerHTML = segs.map(s =>
     '<div class="k"><span class="sw ' + s[0] + '"></span><span><span>' + s[2] + '</span><span class="d">' + s[3] + '</span></span><span class="v">' + (s[1] < 0.05 ? "&lt; 0.1" : n1(s[1])) + ' GB</span></div>').join("") +
-    '<div class="k"><span class="sw" style="background:transparent;border-style:dashed"></span><span><span>Only in iCloud</span><span class="d">' + n0(M.cloud_only_tracks) + ' tracks that take no disk here (Optimize Storage)</span></span><span class="v">' + n1(M.cloud_only_gb) + ' GB</span></div>';
+    '<div class="k"><span class="sw" style="background:transparent;border-style:dashed"></span><span><span>Only in iCloud</span><span class="d">' + n0(M.cloud_only_tracks) + ' tracks that take no disk here (downloads removed)</span></span><span class="v">' + n1(M.cloud_only_gb) + ' GB</span></div>';
 
   // drives
   const dr = D.drives || {};
@@ -50,7 +50,7 @@
     '<div class="drive"><b>TAPEBACKUP</b>' + (tb ? '<span class="st on">connected</span>' : '<span class="st off">not connected</span>') +
     '<p>' + (tb ? n1(tb.used_gb) + ' of ' + n0(tb.total_gb) + ' GB used. Full mirror of the USB master, checked track for track (' + n0(MS.tracks) + ' = ' + n0(MS.tracks) + ').' : 'Plug in to refresh the backup.') + '</p></div>' +
     '<div class="drive"><b>VTMUSIC</b>' + (dr.vtmusic ? '<span class="st on">connected</span>' : '<span class="st off">not connected</span>') +
-    '<p>' + (dr.vtmusic ? 'Car stick attached.' : 'The car stick. It last synced at 1,298 tracks, so it needs ' + n0(behind) + ' more (Snugfest 2026, North Mississippi Allstars and the Sep 24 batch) the next time it is plugged in.') + '</p></div>';
+    '<p>' + (dr.vtmusic ? 'Car stick attached.' : 'The car stick. It last synced at 1,298 tracks, so it needs ' + n0(behind) + ' more (everything added since Snugfest 2026) the next time it is plugged in.') + '</p></div>';
 
   // additions timeline
   const tl = D.timeline;

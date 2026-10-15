@@ -1176,3 +1176,25 @@ Acid Wash). Still missing from the lineup: All Night Boogie Band, Bob Wagner, Fo
 Friends and others.
 **Gotcha repeated:** `for p in "a b"; do set -- $p ...` under zsh passes the whole string as `$1` — it created three
 empty junk folders (removed with rmdir). Pass arguments explicitly, one command per show.
+
+## Oct 15: artifacts republished, scan, and what the Oct 11 interruption left behind
+
+- Republished both artifacts: Setlist Ledger (119 shows, 1,736 tracks) and Tape Desk (stats refreshed 2026-10-14; new log
+  sections for Sep 25-Oct 3 and Oct 12-14, neither of which had ever been logged there). The Ledger artifact is the repo's
+  `index.html` with the `<!doctype>/<html>/<head>/<body>` wrapper and meta tags stripped.
+- **`stats/render_tapedesk.py` no longer works on the live page** (it expects a "Today — five more pasted links" marker
+  that was renamed long ago and ignores the Sep 24 section). This time the live page was patched directly instead: swap the
+  `const DATA = {...};` JSON for `stats/data.json` (+ `"sets"` = Ledger show count, `"drives"` = `{}`), and insert new log
+  HTML (`stats/tapedesk_log_oct14.html`) before the newest `section-label`. `stats/tapedesk.js` text was updated to match
+  ("downloads removed" instead of the wrong "Optimize Storage"; VTMUSIC "behind" wording).
+- **Cloud-status picture now:** 19 `error` tracks with no artist/album = the 1980-08-31 Grateful Dead show (tracks 01-18
+  and 20 of the show, added 2026-10-11 19:58) imported untagged by the session that was interrupted; 2 `error` = Ryan
+  Montbleau; 20 `duplicate` = Soule Monde NYE 19 + 1 Craigie Paradiso; 49 `unknown` incl. ADK Fest sets and Grateful Dead
+  1979-09-04 (16). LDB/Organ Fairchild are fixed. **Not touched; needs Jim's OK** (bulk delete/retag). The three Grateful
+  Dead shows from that session (1979-11-30, 1980-08-31, 1982-04-03) are not in the library; the folders were deleted.
+- JXA gotcha: `tracks.whose({cloudStatus: 'error'})` throws "Can't get object". Read `cloudStatus()` as a bulk array
+  (`.map(String)`) alongside `artist()`/`album()`/`name()` and filter in JS.
+- Scan 2026-10-15: nothing new to pull. New items seen and left alone (Jim said "no on others" 10-14): VTC tape
+  `lcwass2026-10-10.VERMONT_TAPERS_COLLECTIVE_FLAC` (5 Lara Cwass Band tracks + a 3-track "Brewster River Family Set"; a
+  second tape of shows already in the library, its description names "Meeting by The River" / "Whipping Post" / "Speech" and
+  would fill our three "Track N" titles if wanted), plus Higher Ground 10-13 uploads (Beg Steal or Borrow, Magoo).

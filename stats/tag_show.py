@@ -19,7 +19,7 @@ for i, f in enumerate(files):
     if len(cands) > 1:  # break duration ties with the title Music imported from the file's own tag
         t = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format_tags=title", "-of", "csv=p=0", f],
                            capture_output=True, text=True).stdout.strip()
-        stem = os.path.splitext(os.path.basename(f))[0]
+        stem = os.path.splitext(os.path.basename(f))[0].strip()
         cands = [c for c in cands if c["name"].strip() in (t.strip(), stem)] or cands
         if len(cands) > 1 and t.strip() == "":
             cands = [c for c in cands if c["name"].strip() == stem] or cands

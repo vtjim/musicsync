@@ -1198,3 +1198,12 @@ empty junk folders (removed with rmdir). Pass arguments explicitly, one command 
   `lcwass2026-10-10.VERMONT_TAPERS_COLLECTIVE_FLAC` (5 Lara Cwass Band tracks + a 3-track "Brewster River Family Set"; a
   second tape of shows already in the library, its description names "Meeting by The River" / "Whipping Post" / "Speech" and
   would fill our three "Track N" titles if wanted), plus Higher Ground 10-13 uploads (Beg Steal or Borrow, Magoo).
+
+## Oct 15 (evening): cleanup and three approved shows
+
+- Deleted the 19 untagged Grateful Dead 1980-08-31 `error` tracks by persistent ID (Jim's OK). 2 Ryan Montbleau `error` tracks left in place.
+- Imported (verified in Music twice + USB master, local folders deleted, cloud update fired; Jim approved all three):
+  Lettuce, The Smith Opera House, Geneva NY 2026-10-10 (`lettuce2026-10-10.ck930.matrix.flac24`, 16, titles from description);
+  Splintered Sunlight, Ardmore Music Hall, Ardmore PA 2026-10-10 (`ssun2026-10-10.mtx.flac16`, 19);
+  Donna the Buffalo, Shakori Hills Festival, Pittsboro NC 2026-10-03 (`donna2026-10-03`, 21, titles from filenames).
+- Gotcha fixed: filenames with a trailing space (`08.Blue Sky .flac`) made `tag_show.py` report AMBIGUOUS because the stem was not stripped (another recent track had the same duration). Stem is now `.strip()`ped; after a tagging abort, re-run `tag_show.py` alone, then do the verify/USB/delete steps by hand.

@@ -1207,3 +1207,13 @@ empty junk folders (removed with rmdir). Pass arguments explicitly, one command 
   Splintered Sunlight, Ardmore Music Hall, Ardmore PA 2026-10-10 (`ssun2026-10-10.mtx.flac16`, 19);
   Donna the Buffalo, Shakori Hills Festival, Pittsboro NC 2026-10-03 (`donna2026-10-03`, 21, titles from filenames).
 - Gotcha fixed: filenames with a trailing space (`08.Blue Sky .flac`) made `tag_show.py` report AMBIGUOUS because the stem was not stripped (another recent track had the same duration). Stem is now `.strip()`ped; after a tagging abort, re-run `tag_show.py` alone, then do the verify/USB/delete steps by hand.
+
+## Oct 16-20: All Night Boogie Band, USB sticks, Cotter and Friends
+
+- Imported (Jim approved each; verified in Music twice + USB master, local folders deleted, cloud update fired):
+  All Night Boogie Band, Brewster River Jam Fest 2026-10-10 (`anbb2026-10-10.VERMONT_TAPERS_COLLECTIVE_FLAC`, 11; "Track 5" unnamed by taper);
+  Cotter and Friends, **Foam Brewers, Burlington VT** 2026-10-11 (`cotterandfriends20261011t04`, 14; NOT Brewster River, VTC tape; tracks 1, 2, 5 unnamed -> "Track N").
+- **Car sticks (Jim has two now).** The one attached 2026-10-17 was renamed `ELLAMUSIC26` (FAT32 labels max 11 chars; was `JIM-MUSIC`) and given to Ella with a how-to email. It held 133 albums / 1,965 tracks = the USB master minus the duplicate Grand Rapids folder `Live at 20 Monroe Live, ...` (the correctly titled one is `Live at 20 Monroe, ...`; the duplicate is still in the master). The other stick is not yet synced; TAPEBACKUP also still not attached.
+- **Shell cannot read or write removable USB volumes** here (`Operation not permitted` even on `touch`). Sync via Finder AppleScript instead: list albums with `name of every folder of folder X of disk "NAME"`, `comm` against the master's `Artist/Album` list, then `duplicate` each missing album folder (create the artist folder first) inside `with timeout of 1800 seconds`, and verify with `count of files of folder`.
+- Gotcha: `Finder ... count of (every file ... whose name extension is "mp3")` throws -1700; use `count of files of folder`.
+- Left unpulled (ask first): NMA St. Johnsbury 10-03 (`nmas2026-10-03.mtx.hsm.flac24`) and Atwood 10-14, Infamous Stringdusters 10-14, Dogs In A Pile 10-09/10-10 King of Prussia, Daniel Donato 10-08/15/17, Eggy 10-15, moe. 10-15/16, Judge (Higher Ground 10-17).

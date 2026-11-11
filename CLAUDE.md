@@ -1217,3 +1217,15 @@ empty junk folders (removed with rmdir). Pass arguments explicitly, one command 
 - **Shell cannot read or write removable USB volumes** here (`Operation not permitted` even on `touch`). Sync via Finder AppleScript instead: list albums with `name of every folder of folder X of disk "NAME"`, `comm` against the master's `Artist/Album` list, then `duplicate` each missing album folder (create the artist folder first) inside `with timeout of 1800 seconds`, and verify with `count of files of folder`.
 - Gotcha: `Finder ... count of (every file ... whose name extension is "mp3")` throws -1700; use `count of files of folder`.
 - Left unpulled (ask first): NMA St. Johnsbury 10-03 (`nmas2026-10-03.mtx.hsm.flac24`) and Atwood 10-14, Infamous Stringdusters 10-14, Dogs In A Pile 10-09/10-10 King of Prussia, Daniel Donato 10-08/15/17, Eggy 10-15, moe. 10-15/16, Judge (Higher Ground 10-17).
+
+## Nov 11: Phish Farm Aid and ANBB Lake Placid
+
+No local folders; verified in Music twice and on the USB master (21/21 and 14/14), local FLACs deleted, cloud update fired. TAPEBACKUP and VTMUSIC not attached (both behind).
+
+| Artist | Date/Venue | Tracks | Source | Notes |
+|---|---|---|---|---|
+| Phish | Farm Aid, World Music Theatre, Tinley Park IL, 1998-10-03 | 14 | `phish1998-10-03.126724.tinleypark.broadcast.flac1644` | Jim asked for **shnid 126724** specifically. CMT broadcast > DAT, transfer by Jeff Mitchell. Item's date field says `1988-10-03` (typo) — tagged 1998. Titles from item per-file tags; kept the 3 "Announcer" and "Phish Closing" tracks. Five other tapes of this show exist (`.015186.sbd`, `.095202.mtx`, `.126725.mk4v`, `.126726.nak300`, `.085373.mk4`, `.000770.broadcast`) — not pulled. **Finding a shnid on archive.org:** search `creator:(Phish) AND date:...` and match the shnid in the identifier; an OR with `identifier:*126724*` matches thousands of unrelated items. |
+| All Night Boogie Band | Big Z's, Lake Placid NY, 2026-11-05 | 21 | `anbb2026-11-05.VERMONT_TAPERS_COLLECTIVE_FLAC` | VTC tape, titles from the posted setlist; two unnamed tracks tagged "Track 15" and "Track 19" (the taper listed the second as "Track 20"). Pulled under the open ANBB watch. |
+
+- **Open watch:** ANBB's Burlington show (~2026-11-06). **Swampytonk** (`swampytonk20261107t11`, VTC, 2026-11-06) opened for ANBB — Jim said not to pull it, but to keep watching for more from that bill.
+- Setlist Ledger updated (LAST_UPDATED bumped, repo pushed, artifact republished). Tape Desk not refreshed.

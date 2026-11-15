@@ -825,6 +825,17 @@ TAPEBACKUP, FLAC deleted.
 - Ledger source of truth for the public site is a clone at `~/dev/setlist-ledger`
   (`origin` = GitHub). Edit its `SHOWS` array, push, and republish the artifact from the same block.
 
+## Standing rule: update the Setlist Ledger after every import (Jim, 2026-11-14)
+
+Do this automatically at the end of every import batch, without being asked, and
+report it in the same summary: (1) add each show to `SHOWS` in
+`~/dev/setlist-ledger/index.html` (`One-off finds` unless it belongs to a collection), (2) bump
+`LAST_UPDATED`, (3) adjust the "Thank you, tapers" counts, (4) commit and push that repo,
+(5) republish the Setlist Ledger artifact via `publish_files` from a copy of `index.html` cut from
+`<title>` to just before `</body>` (the artifact skips the doctype/head/body wrapper), (6) add the
+batch to this file. The import is not finished until the ledger is. Standing auto-pulls: JRAD,
+Grahame Lesh and Friends, Trey Anastasio Band.
+
 ## Daily 7am library-update email
 
 A recurring cron (set up 2026-09-17, session-only — CronCreate jobs

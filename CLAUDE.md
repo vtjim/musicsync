@@ -1240,3 +1240,19 @@ No local folders; verified in Music twice and on the USB master (21/21 and 14/14
 
 - **Open watch:** ANBB's Burlington show (~2026-11-06). **Swampytonk** (`swampytonk20261107t11`, VTC, 2026-11-06) opened for ANBB — Jim said not to pull it, but to keep watching for more from that bill.
 - Setlist Ledger updated (LAST_UPDATED bumped, repo pushed, artifact republished). Tape Desk not refreshed.
+
+## Nov 14: ANBB Higher Ground, Grahame Lesh x2, Trey Anastasio Band x2
+
+No local folders; verified in Music twice and on the USB master, local FLACs deleted, cloud update fired. TAPEBACKUP synced (master = backup = 2,386 tracks). VTMUSIC and the other car stick not attached. Setlist Ledger updated and republished per the standing rule above.
+
+| Artist | Date/Venue | Tracks | Source | Notes |
+|---|---|---|---|---|
+| All Night Boogie Band | Higher Ground Showcase Lounge, South Burlington VT, 2026-11-06 | 13 | `anbb2026-11-06.VERMONT_TAPERS_COLLECTIVE_FLAC` | VTC, titles from setlist; track 12 posted as "Like The Woman I A" (kept as posted). Taper listed the three-song medley as one track. |
+| Grahame Lesh and Friends | Levitt Pavilion, Denver CO, 2026-10-03 | 17 | `grahameleshandfriends2026-10-03.dpa4061.flac` | 24-bit, DPA 4061 (Cheese Cadet Audio), titles from item |
+| Grahame Lesh and Friends | Hollywood Forever, Hollywood CA, **2026-11-12** | 15 | `glf2026-10-12.BigAlK` | Big Al source. **Item's date field says 2026-10-12 but filenames and description say 11-12-26** — tagged 11-12 (uploaded 11-14). **The item grew while importing:** first metadata read listed 10 FLACs, a later one 14, final 15. First pass tagged against 10 titles and aborted (12 m4a imported untagged); fixed by re-running `getshow.py` (fetches only the missing files), converting just the 3 missing with `ffmpeg -c:a alac`, importing only those, then `tag_show.py` with all 15 titles. **Gotcha: re-read the item metadata immediately before building the spec for a just-uploaded show — tapers add files for hours.** |
+| Trey Anastasio Band | State Theater, Portland ME, 2026-11-10 | 23 | `tab2026-11-10.tf-11.din.sx-r4` | Gakidis, 24/96, titles from item ("Stash*" → "Stash"); tracks up to 394 MB |
+| Trey Anastasio Band | Palace Theater, Albany NY, 2026-11-12 | 20 | `tab2026-11-12.mk4v.cmc1k.din.sx-r4` | Gakidis, 24/96, titles from item |
+
+- **Gotcha:** my metadata filter `format == "Flac"` missed `24bit Flac` files; filter on `name.endswith(".flac")` instead.
+- **Disk:** free space dropped to ~21 GB (91%) after the batch — watch it.
+- Not pulled: Goose 2026-11-13 (three Gakidis tapes), Otis Grove 2026-08-22, Swampytonk (Jim: no), mdamicovt archival uploads.

@@ -1256,3 +1256,10 @@ No local folders; verified in Music twice and on the USB master, local FLACs del
 - **Gotcha:** my metadata filter `format == "Flac"` missed `24bit Flac` files; filter on `name.endswith(".flac")` instead.
 - **Disk:** free space dropped to ~21 GB (91%) after the batch — watch it.
 - Not pulled: Goose 2026-11-13 (three Gakidis tapes), Otis Grove 2026-08-22, Swampytonk (Jim: no), mdamicovt archival uploads.
+
+## Nov 21: John Scofield at the Flynn; open watches
+
+- Imported `JohnScofield.2026.11.18` — John Scofield's Electrospective, The Flynn Theatre, Burlington VT, 2026-11-18, 12 tracks (Mike D (VT) taper, 24-bit; Scofield/Burbridge/Goldings/Deitch). Titles from the item's per-file titles, kept "Encore Break"/"Encore Banter". Album `Electrospective - Live at The Flynn, Burlington VT - 2026-11-18`. Verified 12/12 in Music (twice) and on the USB master, local folder deleted, cloud update fired, Ledger updated and republished. **A second Flynn tape exists** (`john-scofield-2026-11-18-05`, uploader Jcable60, AKG, 11 tracks, a slightly different setlist incl. "Ladies Night" and "Blue Matter") — not pulled. archive.org downloads were very slow (~12 min for 1.4 GB); `run_show.sh` hit the 10-minute tool timeout and finished in the background.
+- TAPEBACKUP not attached — behind by this show (and VTMUSIC/other stick since earlier).
+- **Open watches (Jim, 2026-11-21):** (1) The Last Waltz tribute at the Flynn, Burlington VT (seen by Jim; nothing posted yet — only a 2016 Last Waltz Band tape exists); (2) Dark Star Orchestra, Rutland VT, Tuesday 2026-11-17 (nothing posted; the only new DSO tape is Boston 11-14, `dso2026-11-14.cm4.t-flac2448`, not pulled). Search `creator:(Dark Star Orchestra)`, `title:(Last Waltz)`, and VT-taper uploaders each scan.
+- Seen, not pulled: Goose 11-13/14/15 (Gakidis, MVB, mdamicovt tapes), Fungkshui 11-14 (VTC), Danny and The Parts 11-08 (VTC), Dub Apocalypse 2026-05-16, other Scofield tapes (11-05, 11-08, 11-13, 11-14).

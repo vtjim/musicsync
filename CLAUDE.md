@@ -1271,3 +1271,14 @@ Imported `tab-billy2026-11-20` (standing Trey auto-pull) — Trey Anastasio Band
 ## Nov 22 (later): Trey and Billy, Worcester night 2
 
 Imported `tab-billy2026-11-21.elam260.ck8.pas.sx-r4` (standing Trey auto-pull) — Trey Anastasio Band & Billy Strings, DCU Center Arena, Worcester MA, 2026-11-21, 23 tracks (Gakidis, 24/96, 4.2 GB). Titles from the posted setlist, footnote markers stripped. Album `Live at DCU Center Arena, Worcester MA - 2026-11-21 (with Billy Strings)`. **`tag_show.py` reported 1 failure (track 8 "Drifting" left as `track08`, so `run_show.sh` stopped at "VERIFY FAILED - keeping local files").** Found the untagged track with `whose date added > ... and (artist is "" or album is "")`, fixed it with `stats/tag_track.sh <pid> ...`, then did the verify/USB/delete steps by hand: 23/23 in Music twice, 23/23 USB, local folder deleted, cloud update fired, Ledger republished. Also seen, not pulled: a third Scofield Flynn tape (`js2026-11-18t09`, Brett S.). **No USB drive attached** on 2026-11-22 — only Macintosh HD under /Volumes; TAPEBACKUP is behind by Scofield Flynn, Worcester 11-20 and 11-21 (~58 tracks). Open watches unchanged.
+
+## Nov 23: Hug Your Farmer (Last Waltz at the Flynn) and Billy Strings, Worcester
+
+Both verified in Music (twice) and on the USB master, local folders deleted, cloud update fired, Ledger republished. No USB drive attached — TAPEBACKUP is behind by these two shows (49 tracks) plus Worcester 11-21 night 2 fix.
+
+| Artist | Date/Venue | Tracks | Source | Notes |
+|---|---|---|---|---|
+| Hug Your Farmer | The Flynn Theatre, Burlington VT, 2026-11-20 | 25 | `hyf20261120t12` | VTC tape (`shemp1972`); no embedded tags, titles from the posted setlist ("It Makes N o Difference" → "It Makes No Difference"). The setlist is The Last Waltz songs with guests (Mike & Tessa Gordon, Kat Wright, Seth Yacavone, Lowell Thompson, Brett Hughes, Josh Panda…) — this is the **Last Waltz tribute Jim saw at the Flynn** (open watch, now filled). The item's `creator` field reads "Nug Your Farmer," (typo); tagged "Hug Your Farmer" to match the 2025-11-21 show already in the library. The description never says "Last Waltz" — identified from the setlist. |
+| Billy Strings | DCU Center, Worcester MA, 2026-11-21 (with Trey Anastasio Band) | 24 | `billystrings2026-11-21.MVBAKGHD` | Mark Van Blunk, 2 AKG c451Eck8 + 2 c414XLII mid-side matrix, 24/48; filenames carried titles. Same night as the Gakidis Trey tape already in the library (`tab-billy2026-11-21...`, 23 tracks). A second MVB tape (`.MVBAKGM-SHD`, 414s only, 24 tracks) not pulled. Tagged under the item's creator "Billy Strings" (the Gakidis copy is under "Trey Anastasio Band" — two views of the same show) |
+
+- The Dark Star Orchestra Rutland show (Tue 2026-11-17) is still the only open watch (nothing posted); new DSO tape seen is Montclair NJ 11-20 (`dso2026-11-20.pr`), not pulled. Also not pulled: Scofield tape `JohnScofield2026-11-18` (Brett S., Flynn).
